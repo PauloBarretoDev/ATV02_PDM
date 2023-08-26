@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="scripts.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>API Gato e Cachorro</title>
+</head>
+<body>
+  <h1>Consumindo APIs de Gatos e Cachorros</h1>
+  
+  <button id="getCatButton">Obter Imagems/Gifs de Gato</button>
+  <br>  
+  <button id="getDogButton">Obter Imagens/Gifs de Cachorro</button>
+  <hr>
+  <br>
+  <div id="imageContainer">
+
+    <img id="animalImage" src="" width="700px" height="50%" alt="Imagem de um animal">
+ 
+  </div>
+
+  <script>
+    async function getCatInfo() {
+      try {
+        const response = await fetch('https://api.thecatapi.com/v1/images/search');
+        const data = await response.json();
+        const catImageURL = data[0].url;
+        showImage(catImageURL);
+      } catch (error) {
+        console.error('Erro ao buscar informações do gato:', error);
+      }
+    }
+
+    async function getDogInfo() {
+      try {
+        const response = await fetch('https://dog.ceo/api/breeds/image/random');
+        const data = await response.json();
+        const dogImageURL = data.message;
+        showImage(dogImageURL);
+      } catch (error) {
+        console.error('Erro ao buscar informações do cão:', error);
+      }
+    }
+
+    function showImage(imageURL) {
+      const imageContainer = document.getElementById('imageContainer');
+      const animalImage = document.getElementById('animalImage');
+      animalImage.src = imageURL;
+      animalImage.alt = 'Imagem de um animal';
+      imageContainer.style.display = 'block';
+    }
+
+    document.getElementById('getCatButton').addEventListener('click', getCatInfo);
+    document.getElementById('getDogButton').addEventListener('click', getDogInfo);
+  </script>
+</body>
+</html>

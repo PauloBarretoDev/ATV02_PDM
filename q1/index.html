@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade Teste API</title>
+</head>
+<body>
+    
+    <!-- Inicio do formulario -->
+    <div id="formulario">
+        <h1 id="legendas">Verificador de CEP</h1>
+        <h2 id="legendas">Digite seu CEP e aperte a tecla TAB para enviar</h2>
+        <form method="get" action=".">
+            <label class="label">Cep:
+            <input class="input" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                   onblur="pesquisacep(this.value);" /></label><br />
+            <label class="label">Rua:
+            <input class="input" name="rua" type="text" id="rua" size="60" /></label><br />
+            <label class="label">Bairro:
+            <input class="input" name="bairro" type="text" id="bairro" size="40" /></label><br />
+            <label class="label">Cidade:
+            <input class="input" name="cidade" type="text" id="cidade" size="40" /></label><br />
+            <label class="label">Estado:
+            <input class="input" name="uf" type="text" id="uf" size="2" /></label><br />
+            <label class="label">IBGE:
+            <input class="input" name="ibge" type="text" id="ibge" size="8" /></label><br />
+          </form>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  #getCatButton,
+  #getDogButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  #getCatButton:hover,
+  #getDogButton:hover {
+    background-color: #2980b9;
+  }
+
+  #imageContainer {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+  }
+
+  #animalImage {
+    max-width: 100%;
+    height: auto;
+  }
